@@ -17,5 +17,5 @@ This is a sample application to search OpenLibrary using ReactJs.
 npm install
 node_modules/.bin/webpack --config webpack.config.js
 npm start
-open http://localhost:9000
+open http://localhost:3000
 ```
