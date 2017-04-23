@@ -96,7 +96,6 @@ class SearchPage extends Component {
   }
 
   _sortByTitle() {
-    console.log("sort");
     let sortByAttribute = this.state.sorting === 'asc' ? "title" : "-title";
     let newState = Update(this.state,
                           { docs: { $apply: (docs) => { return docs.sort(sortBy(sortByAttribute)) } },
