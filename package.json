@@ -39,22 +39,35 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.2",
+    "babel-jest": "^19.0.0",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
+    "jest": "^19.0.2",
     "jest-cli": "^19.0.2",
+    "jest-fetch-mock": "^1.1.1",
     "webpack": "^2.4.1"
   },
   "jest": {
-    "scriptPreprocessor": "./tools/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "react"
+    "verbose": true,
+    "setupFiles": [
+      "./test-env.js"
     ],
-    "testPathDirs": [
-      "./src/app",
-      "./src/client"
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    },
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/fbjs"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
     ]
   }
 }
